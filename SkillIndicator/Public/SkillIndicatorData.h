@@ -25,5 +25,4 @@ public :
 
 	UPROPERTY( EditDefaultsOnly )
 	ESkillIndicatorAttachment IndicatorAttachment;
-	
 };
