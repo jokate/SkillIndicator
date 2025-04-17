@@ -35,6 +35,11 @@ void ALinearSkillIndicator::CalculateIndicatorMesh()
 
 	APawn* OwnerPawn = PC->GetPawn();
 
+	if ( IsValid( OwnerPawn ) == false )
+	{
+		return;
+	}
+
 	// 플레이어 위치에서 지면과의 교차점을 향하는 벡터 계산
 	FVector SkillDirection = GroundIntersection - OwnerPawn->GetActorLocation();
 	SkillDirection.Z = 0;
