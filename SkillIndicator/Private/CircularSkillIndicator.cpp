@@ -41,6 +41,10 @@ void ACircularSkillIndicator::CalculateIndicatorMesh()
 	{
 		return;
 	}
+
+	FVector DirectionVector = GroundIntersection - OwnerPawn->GetActorLocation();
+	GroundIntersection = OwnerPawn->GetActorLocation() + DirectionVector.GetClampedToMaxSize( SkillCastRadius );
+	GroundIntersection.Z = 0.f;
 	
 	DrawDebugSphere( GetWorld(), GroundIntersection, 50, 50, FColor::Blue);
 
